@@ -1,0 +1,14 @@
+@font-face{
+    font-family: ubuntu;
+    src: url('/ubuntu/Ubuntu-Regular.ttf');
+}
+
+#Maincomponent{
+    font-family: ubuntu;
+}
+
+canvas{
+    background-color: #191a1e;
+    position: absolute;
+    z-index:-1;
+}

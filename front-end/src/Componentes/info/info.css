@@ -1,0 +1,11 @@
+#info{
+    color: black;
+    background-color: #f3f3f3;
+    opacity: 80%;
+    border-radius: 4px;
+}
+
+#data{
+    margin-left: 2em;
+    size: 0.8em;
+}
