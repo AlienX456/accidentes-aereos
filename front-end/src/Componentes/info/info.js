@@ -35,6 +35,7 @@ export default class Info extends React.Component{
                 this.setState({situaciones : result.situaciones});
 
                 //saving on cookies
+                this.cookies.set("situaciones",result.situaciones);
             }
         )
         .catch
