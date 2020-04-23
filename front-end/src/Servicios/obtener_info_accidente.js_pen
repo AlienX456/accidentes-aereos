@@ -1,0 +1,14 @@
+import axios from 'axios';
+
+export function obtener_info_accidente(){
+    axios.get("http://127.0.0.1:8000/api/vuelos").then
+    (
+        res=>{
+            return res.data.results;
+        }
+    )
+    .catch
+    (
+        err=>{console.log(err);}
+    );
+}

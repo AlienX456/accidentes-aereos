@@ -1,7 +1,8 @@
 import React from 'react';
+import Cookies from 'universal-cookie';
 import './info.css';
 import axios from 'axios';
-//import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 export default class Info extends React.Component{
@@ -16,11 +17,12 @@ export default class Info extends React.Component{
             vuelos : [],
             situaciones : []
         };
+        this.cookies = new Cookies();
         this.getDataAxios();
     }
 
     getDataAxios(){
-        axios.get("http://127.0.0.1:8000/api/informacion/?k_num="+this.props.location.num).then
+        axios.get("http://127.0.0.1:8000/api/informacion/?k_num="+this.cookies.get('num_accidente')).then
         (
             res=>{
                 let result = res.data.results[0];
@@ -31,6 +33,8 @@ export default class Info extends React.Component{
                 this.setState({muertos : result.n_muertos});
                 this.setState({vuelos : result.vuelos});
                 this.setState({situaciones : result.situaciones});
+
+                //saving on cookies
             }
         )
         .catch
@@ -77,10 +81,14 @@ export default class Info extends React.Component{
                     </table>
                 </div>
             </div>
-            <div className="flex flex-wrap w-screen">
+            <div className="flex flex-wrap lg:w-screen">
                 <img className="w-3/12 ml-auto" src={process.env.PUBLIC_URL + "img/F302.jpg"} alt="Imagen no encontrada" />
                 <img className="w-3/12" src={process.env.PUBLIC_URL + "img/F302B.jpg"} alt="Imagen no encontrada" />
                 <img className="w-3/12 mr-auto" src={process.env.PUBLIC_URL + "img/F302C.jpg"} alt="Imagen no encontrada" />
+            </div>
+
+            <div className="flex flex-wrap lg:w-screen">
+                <Link className="ml-auto mr-auto bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"> {">>"} </Link>
             </div>
         </div>
         );

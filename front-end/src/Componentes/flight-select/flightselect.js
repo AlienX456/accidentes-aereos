@@ -1,9 +1,13 @@
+import Cookies from 'universal-cookie';
 import React from 'react';
 import './flightselect.css';
 import axios from 'axios';
 import {Link} from "react-router-dom";
+//import obtener_info_accidente from '../../Servicios/obtener_info_accidente.js'
 
 export default class Flightselect extends React.Component {
+
+    
 
     constructor(props) {
         super(props);
@@ -12,7 +16,11 @@ export default class Flightselect extends React.Component {
             selectValue : 'Ninguno',
             buttonHide: false
         };
+
+        this.cookies = new Cookies();
+
         this.getDataAxios();
+        //this.obtener_info_accidente();
     }
 
 
@@ -38,6 +46,7 @@ export default class Flightselect extends React.Component {
 
     handleChangeSelect = (e) =>{
         this.setState({selectValue: e.target.value});
+        this.cookies.set('num_accidente', e.target.value);
         if (e.target.value === "Ninguno"){
             this.setState({buttonHide:false})
         }else{
@@ -62,7 +71,7 @@ export default class Flightselect extends React.Component {
                             {this.state.vuelos.map((vuelo) => <option value={vuelo.value}>{vuelo.display}</option>)}
                         </select>
                         <div className=" py-4 text-center" >
-                            {this.state.buttonHide && <Link className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" to={{pathname:"/info",num:this.state.selectValue}}>Ir al enlace</Link>}
+                            {this.state.buttonHide && <Link className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" to={{pathname:"/info"}}>Ir al enlace</Link>}
                         </div>
                     </div>
                 </div>
@@ -70,6 +79,3 @@ export default class Flightselect extends React.Component {
         );
     }
 }
-
-
-//<input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="Jane Doe" /> 
