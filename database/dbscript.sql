@@ -38,7 +38,7 @@ CREATE TABLE Accidente
 (
 	k_numaccidente serial NOT NULL,
 	w_ntsbdoc varchar(100) NULL,
-	"d_conclusión" varchar(500) NOT NULL,
+	"d_conclusion" varchar(500) NOT NULL,
 	n_heridos numeric NULL,
 	n_muertos numeric NULL
 )
@@ -75,7 +75,7 @@ CREATE TABLE Situacion
 	un_lon numeric(9,6) NOT NULL,
 	u_nomlugar varchar(30) NULL,
 	f_hora timestamp with time zone NOT NULL,
-	"d_situación" varchar(200) NOT NULL,
+	"d_situacion" varchar(200) NOT NULL,
 	un_altitud integer NULL,
 	k_numaccidente serial NOT NULL
 )
@@ -87,10 +87,10 @@ CREATE TABLE Vuelo
 	f_salida timestamp with time zone NOT NULL,
 	u_ciudadorigen varchar(50) NOT NULL,
 	u_ciudaddestino varchar(50) NULL,
-	"i_registroavión" varchar(6) NOT NULL,
+	"i_registroavion" varchar(6) NOT NULL,
 	k_nomentidad varchar(50) NULL,
 	k_nommodelo varchar(50) NULL,
-	k_numaccidente serial NULL
+	k_numaccidente serial NOT NULL
 )
 ;
 

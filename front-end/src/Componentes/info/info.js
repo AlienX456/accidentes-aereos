@@ -13,7 +13,8 @@ export default class Info extends React.Component{
             conclusion : "",
             heridos : 0,
             muertos : 0,
-            vuelos : []
+            vuelos : [],
+            situaciones : []
         };
         this.getDataAxios();
     }
@@ -29,6 +30,7 @@ export default class Info extends React.Component{
                 this.setState({heridos : result.n_heridos});
                 this.setState({muertos : result.n_muertos});
                 this.setState({vuelos : result.vuelos});
+                this.setState({situaciones : result.situaciones});
             }
         )
         .catch
@@ -39,79 +41,84 @@ export default class Info extends React.Component{
 
     render(){
         return(
-        <div className="flex flex-wrap h-screen justify-around items-center" id="Maincomponent">
-            <div id="info" className="justify-center m:p-0 md:p-4 lg:p-16">
-                <h1>Información General </h1>
-                <p id="data">{this.state.conclusion}</p>
-                <ul>
-                    <li>Documentos NTSB : 
-                        <ul id="data" className="list-disc">
-                            <li>{this.state.ntsb_doc}</li>
-                        </ul>
-                    </li>
-                    <li>Heridos : {this.state.heridos}</li>
-                    <li>Muertos : {this.state.muertos}</li>
-                </ul>
+        <div className="h-screen lg:pt-12 content-center ">
+            <div className="flex flex-wrap justify-around lg:my-2">
+                <h1>Información del Accidente</h1>
             </div>
-            <div id="info" className="justify-center m:p-0 md:p-4 lg:p-16">
-                <ul>
-                    <li>Vuelo(s) involucrados :
-                        <ul id="data" className="list-disc">
-                            {
-                            this.state.vuelos.map((vuelo)=>
-                                <li>{vuelo.k_nomvuelo} :
-                                <ul id="data">
-                                    <li>Ciudad de Origen : {vuelo.u_ciudadorigen}</li>
-                                    <li>Ciudad de Destino : {vuelo.u_ciudaddestino}</li>
-                                    <li>Matricula : {vuelo.i_registroavion}</li>
-                                    <li>Modelo : {vuelo.k_nommodelo}</li>
-                                    <li>Entidad : {vuelo.k_nomentidad}</li>
-                                </ul>
-                                </li>
-                            )}
-                        </ul>
-                    </li>
-                </ul>
+            <div className="flex flex-wrap justify-around lg:my-2">
+                <div id="info" className="w-6/12 justify-center m:p-0 md:p-4 lg:p-16">
+                    <table className="table-auto items-center">
+                        <tr className="lg:mb-2">
+                            <td>
+                                Información General
+                            </td>
+                            <td>
+                                <p id="data">{this.state.conclusion}, mas información ir al enlace de la NTSB {this.state.ntsb_doc}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Heridos 
+                            </td>
+                            <td>
+                                {this.state.heridos}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Muertos 
+                            </td>
+                            <td>
+                                {this.state.muertos}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <img className="w-5/24 justify-center" src={process.env.PUBLIC_URL + "img/F302.jpg"} alt="Imagen no encontrada" />
+                <img className="w-5/24 justify-center" src={process.env.PUBLIC_URL + "img/F302B.jpg"} alt="Imagen no encontrada" />
+
             </div>
-            <div id="info" className="justify-center m:p-0 md:p-4 lg:p-16">
-                <ul>
-                    <li>Vuelo(s) involucrados :
-                        <ul id="data" className="list-disc">
-                            {
-                            this.state.vuelos.map((vuelo)=>
-                                <li>{vuelo.k_nomvuelo} :
-                                <ul id="data">
-                                    <li>Ciudad de Origen : {vuelo.u_ciudadorigen}</li>
-                                    <li>Ciudad de Destino : {vuelo.u_ciudaddestino}</li>
-                                    <li>Matricula : {vuelo.i_registroavion}</li>
-                                    <li>Modelo : {vuelo.k_nommodelo}</li>
-                                    <li>Entidad : {vuelo.k_nomentidad}</li>
-                                </ul>
-                                </li>
-                            )}
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div id="info" className="justify-center m:p-0 md:p-4 lg:p-16">
-                <ul>
-                    <li>Vuelo(s) involucrados :
-                        <ul id="data" className="list-disc">
-                            {
-                            this.state.vuelos.map((vuelo)=>
-                                <li>{vuelo.k_nomvuelo} :
-                                <ul id="data">
-                                    <li>Ciudad de Origen : {vuelo.u_ciudadorigen}</li>
-                                    <li>Ciudad de Destino : {vuelo.u_ciudaddestino}</li>
-                                    <li>Matricula : {vuelo.i_registroavion}</li>
-                                    <li>Modelo : {vuelo.k_nommodelo}</li>
-                                    <li>Entidad : {vuelo.k_nomentidad}</li>
-                                </ul>
-                                </li>
-                            )}
-                        </ul>
-                    </li>
-                </ul>
+            <div className="flex flex-wrap justify-around items-center ">
+                <div id="info" className="justify-center m:p-0 md:p-4 lg:p-16">
+                    <ul>
+                        <li>Vuelo(s) involucrados :
+                            <ul id="data" className="list-disc">
+                                {
+                                this.state.vuelos.map((vuelo)=>
+                                    <li>{vuelo.k_nomvuelo} :
+                                    <ul id="data">
+                                        <li>Ciudad de Origen : {vuelo.u_ciudadorigen}</li>
+                                        <li>Ciudad de Destino : {vuelo.u_ciudaddestino}</li>
+                                        <li>Matricula : {vuelo.i_registroavion}</li>
+                                        <li>Modelo : {vuelo.k_nommodelo}</li>
+                                        <li>Entidad : {vuelo.k_nomentidad}</li>
+                                    </ul>
+                                    </li>
+                                )}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="info" className="justify-center m:p-0 md:p-4 lg:p-16">
+                    <ul>
+                        <li>Situaciones:
+                            <ul id="data" className="list-disc">
+                                {
+                                this.state.situaciones.map((situacion)=>
+                                    <li>{situacion.k_num} :
+                                    <ul id="data">
+                                        <li>Descripción : {situacion.d_situacion}</li>
+                                        <li>Latitud : {situacion.un_lat}</li>
+                                        <li>Longitud : {situacion.un_lon}</li>
+                                        <li>Lugar : {situacion.f_hora}</li>
+                                        <li>Altitud : {situacion.altitud}</li>
+                                    </ul>
+                                    </li>
+                                )}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         );
