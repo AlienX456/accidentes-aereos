@@ -15,4 +15,5 @@ iframe{
 #inside-container{
     border-color: white;
     border-width: 2px;
+    border-radius: 2px;
 }

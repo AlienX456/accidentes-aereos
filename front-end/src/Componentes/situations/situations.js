@@ -60,15 +60,14 @@ export default class Situations extends React.Component{
                         itemClass="carousel-item-padding-40-px"
                     >
                         {this.cookies.get("situaciones").map((situacion) =>
-                            <div className="flex flex-wrap lg:mb-4" id="inside-container">
-                                <div className="lg:w-2/6 ml-auto">
+                            <div className="flex flex-wrap lg:mb-4 lg:pt-8 lg:pb-8" id="inside-container">
+                                <div className="lg:w-2/6 lg:mr-2 ml-auto">
                                 <table className="table-auto items-center">
-                                    <tr>
-                                        <td>
-                                            <p>Número de la situación</p>
-                                        </td>
+                                    <tr className="text-center">
+                                        <td></td>
                                         <td>
                                             <p>{situacion.k_num}</p>
+                                            <hr></hr>
                                         </td> 
                                     </tr>
                                     <tr>
@@ -97,7 +96,7 @@ export default class Situations extends React.Component{
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p>Nombre del lugar</p>
+                                            <p>Lugar</p>
                                         </td>
                                         <td>
                                             <p>{situacion.u_nomlugar}</p>
@@ -105,7 +104,7 @@ export default class Situations extends React.Component{
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p>Hora del suceso</p>
+                                            <p>Hora</p>
                                         </td>
                                         <td>
                                             <p>{situacion.f_hora}</p>
@@ -113,7 +112,7 @@ export default class Situations extends React.Component{
                                     </tr>
                                 </table>
                                 </div>
-                                <div className="lg:w-2/6 mr-auto">
+                                <div className="lg:w-2/6 lg:ml-2 mr-auto">
                                     <iframe 
                                         title="OSM" 
                                         class="iframe" 
