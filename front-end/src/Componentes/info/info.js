@@ -89,7 +89,7 @@ export default class Info extends React.Component{
             </div>
 
             <div className="flex flex-wrap lg:w-screen">
-                <Link className="ml-auto mr-auto bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"> {">>"} </Link>
+                <Link className="ml-auto mr-auto bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" to={{pathname:"/situaciones"}}> {">>"} </Link>
             </div>
         </div>
         );
