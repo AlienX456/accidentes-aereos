@@ -6,7 +6,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 //https://www.npmjs.com/package/react-multi-carousel
 
-//openmaps
+//mapa
+
 
 export default class Situations extends React.Component{
     
@@ -17,6 +18,7 @@ export default class Situations extends React.Component{
         };
         this.cookies = new Cookies();
     }
+
 
     render(){
         const responsive = {
@@ -36,6 +38,8 @@ export default class Situations extends React.Component{
               slidesToSlide: 1 // optional, default to 1.
             }
           };
+
+
           
         return (
             <div className="flex flex-wrap content-center h-screen">
@@ -75,7 +79,7 @@ export default class Situations extends React.Component{
                                             <p>Descripción</p>
                                         </td>
                                         <td>
-                                            <p>{situacion.d_situacion}</p>
+                                            <p className="text-justify">{situacion.d_situacion}</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -113,12 +117,7 @@ export default class Situations extends React.Component{
                                 </table>
                                 </div>
                                 <div className="lg:w-2/6 lg:ml-2 mr-auto">
-                                    <iframe 
-                                        title="OSM" 
-                                        class="iframe" 
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-82.55264282226564%2C22.971353928229505%2C-82.19009399414064%2C23.200960808078566&layer=mapnik"
-                                    >
-                                    </iframe>
+
                                 </div>
                             </div> 
                         )}
@@ -126,7 +125,14 @@ export default class Situations extends React.Component{
                 </div>
             </div>
         );
-    }
-
-    
+    }  
 }
+
+/*
+<iframe 
+    title="OSM" 
+    class="iframe" 
+    src={"https://www.openstreetmap.org/export/embed.html?bbox=-82.55264282226564%2C22.971353928229505%2C-82.19009399414064%2C23.200960808078566&layer=mapnik"}
+>
+</iframe>
+*/

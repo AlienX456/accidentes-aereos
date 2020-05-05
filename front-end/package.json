@@ -10,7 +10,6 @@
     "leaflet": "^1.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-leaflet": "^2.6.3",
     "react-multi-carousel": "^2.5.5",
     "react-particles-js": "^2.7.1",
     "react-router-dom": "^5.1.2",

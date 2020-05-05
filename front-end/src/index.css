@@ -8,7 +8,7 @@
 }
 
 canvas{
-    background-color: #191a1e;
+    background: url("/img/background.jpg");
     position: absolute;
     z-index:-1;
 }

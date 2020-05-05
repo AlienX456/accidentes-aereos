@@ -53,7 +53,7 @@ export default class Info extends React.Component{
                 </div>
             </div>
             <div className="flex flex-wrap w-screen">
-                <div id="info" className="w-9/12 ml-auto mr-auto xl:border-2 sm:border-2 m:border-0 m:p-0 md:p-4 lg:p-16">
+                <div id="info" className="w-9/12 ml-auto mr-auto m:p-0 md:p-4 lg:p-16">
                     <table className="table-auto items-center">
                         <tr className="lg:mb-2">
                             <td>
@@ -89,7 +89,7 @@ export default class Info extends React.Component{
             </div>
 
             <div className="flex flex-wrap lg:w-screen">
-                <Link className="ml-auto mr-auto bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" to={{pathname:"/situaciones"}}> {">>"} </Link>
+                <Link id="boton-situaciones" className="hover:bg-gray-700 py-2 px-4 rounded shadow border-white lg:border-2 ml-auto mr-auto" to={{pathname:"/situaciones"}}> {">>"} </Link>
             </div>
         </div>
         );

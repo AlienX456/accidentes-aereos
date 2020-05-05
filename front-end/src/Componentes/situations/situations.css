@@ -7,13 +7,9 @@ div{
     background: white;
 }
 
-iframe{
-    width: 100%;
-    height: 100%;
-}
-
 #inside-container{
     border-color: white;
     border-width: 2px;
-    border-radius: 2px;
+    background-color: rgba(104,104,104,0.95);
+    border-radius: 15px 50px;
 }

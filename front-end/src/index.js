@@ -23,6 +23,9 @@ class Maincomponent extends React.Component {
           enable: true,
           value_area: 800
         }
+      },
+      color:{
+        value:"#8692AD"
       }
     }
   };

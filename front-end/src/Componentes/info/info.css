@@ -1,7 +1,13 @@
 #info{
-    color: white;
     border-color: white;
-    opacity: 90%;
+    border-width: 2px;
+    color: white;
+    background-color: rgba(90,90,90,0.98);
+    border-radius: 15px 50px;
+}
+
+#boton-situaciones{
+    background-color: rgba(90,90,90,0.98);
 }
 
 #data{

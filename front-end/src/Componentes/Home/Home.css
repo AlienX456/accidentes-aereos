@@ -1,6 +1,7 @@
 #Home{
     border-color: white;
-    color: white;
-    border-radius: 4px;
+    border-width: 2px;
+    background-color: rgba(90,90,90,0.98);
+    border-radius: 15px 50px;
 }
 

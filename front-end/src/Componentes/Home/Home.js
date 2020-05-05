@@ -5,15 +5,15 @@ export default class Home extends React.Component{
     render(){
         return(
             <div className="flex h-screen justify-around items-center" id="Maincomponent">
-                <div id="Home" className="flex-col flex-wrap justify-center xl:border-2 sm:border-2 m:border-0 m:p-0 md:p-4 lg:p-16 xl:p-20 xl:6">
-                    <div id="Bienvenido" className="text-center sm:text-lg md:text-xl lg:text-2xl xl:text-5xl">
+                <div id="Home" className="lg:w-6/12 flex-col flex-wrap justify-center m:p-0 md:p-4 lg:p-16 xl:p-20 xl:6">
+                    <div id="Bienvenido" className="text-center lg:text-4xl">
                         <p>BIENVENIDO</p>
                     </div>
                     <div className=" py-4 text-center">
-                        <h1>Aqui encontraras información sobre accidentes aéreos</h1>
+                        <p className="text-xl" >Aqui encontraras información sobre accidentes aéreos</p>
                     </div>
                     <div className=" py-4 text-center" >
-                            <Link className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" to="/flight">Ir al enlace</Link>
+                            <Link className="hover:bg-gray-700 py-2 px-4 rounded shadow border-white lg:border-2" to="/flight">Seleccionar vuelo</Link>
                     </div>
                 </div>
             </div> 

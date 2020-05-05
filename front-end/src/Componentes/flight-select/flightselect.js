@@ -57,9 +57,9 @@ export default class Flightselect extends React.Component {
     render() {
         return (
             <div className="flex h-screen justify-around items-center" id="Maincomponent">
-                <div id="fs" className="flex-col flex-wrap justify-center xl:border-2 sm:border-2 m:border-0 m:p-0 md:p-4 lg:p-16 xl:p-20">
+                <div id="fs" className="flex-col flex-wrap justify-center m:p-0 md:p-4 lg:p-16 xl:p-20">
                     <div className=" py-4 text-center">
-                        <h1>Elige a continuación el vuelo en particular que estas buscando</h1>
+                        <p className="lg:text-2xl" >Elige a continuación el vuelo en particular que estas buscando</p>
                     </div>
                     <div className=" py-4 text-center" >
                         <select 
@@ -71,7 +71,7 @@ export default class Flightselect extends React.Component {
                             {this.state.vuelos.map((vuelo) => <option value={vuelo.value}>{vuelo.display}</option>)}
                         </select>
                         <div className=" py-4 text-center" >
-                            {this.state.buttonHide && <Link className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" to={{pathname:"/info"}}>Ir al enlace</Link>}
+                            {this.state.buttonHide && <Link className="hover:bg-gray-700 py-2 px-4 rounded shadow border-white lg:border-2" to={{pathname:"/info"}}>Ver información</Link>}
                         </div>
                     </div>
                 </div>
