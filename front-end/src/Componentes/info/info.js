@@ -82,10 +82,10 @@ export default class Info extends React.Component{
                     </table>
                 </div>
             </div>
-            <div className="flex flex-wrap lg:w-screen">
-                <img className="w-3/12 ml-auto" src={process.env.PUBLIC_URL + "img/F302.jpg"} alt="Imagen no encontrada" />
+            <div className="flex flex-wrap lg:w-9/12 ml-auto mr-auto justify-between">
+                <img className="w-3/12" src={process.env.PUBLIC_URL + "img/F302.jpg"} alt="Imagen no encontrada" />
                 <img className="w-3/12" src={process.env.PUBLIC_URL + "img/F302B.jpg"} alt="Imagen no encontrada" />
-                <img className="w-3/12 mr-auto" src={process.env.PUBLIC_URL + "img/F302C.jpg"} alt="Imagen no encontrada" />
+                <img className="w-3/12" src={process.env.PUBLIC_URL + "img/F302C.jpg"} alt="Imagen no encontrada" />
             </div>
 
             <div className="flex flex-wrap lg:w-screen">

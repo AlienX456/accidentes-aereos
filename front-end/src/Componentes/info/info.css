@@ -16,6 +16,11 @@
 
 img{
     height: auto;
+    width: auto;
+    border-radius: 50px 15px;
+    border-color: white;
+    border-width: 2px;
+
 }
 
 h1{
