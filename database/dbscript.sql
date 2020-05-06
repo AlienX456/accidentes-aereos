@@ -76,6 +76,7 @@ CREATE TABLE Situacion
 	u_nomlugar varchar(30) NULL,
 	f_hora timestamp with time zone NOT NULL,
 	"d_situacion" varchar(200) NOT NULL,
+	iframe_osm varchar(200) NOT NULL,
 	un_altitud integer NULL,
 	k_numaccidente serial NOT NULL
 )

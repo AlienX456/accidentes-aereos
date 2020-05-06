@@ -60,6 +60,7 @@ class Situacion(models.Model):
     d_situacion = models.CharField(max_length=200)
     un_altitud = models.IntegerField(blank=True, null=True)
     k_numaccidente = models.ForeignKey(Accidente, related_name='situaciones',on_delete=models.DO_NOTHING, db_column='k_numaccidente')
+    iframe = models.CharField(max_length=500)
 
     class Meta:
         managed = False

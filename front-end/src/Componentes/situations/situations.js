@@ -117,7 +117,7 @@ export default class Situations extends React.Component{
                                 </table>
                                 </div>
                                 <div className="lg:w-2/6 lg:ml-2 mr-auto">
-
+                                    <iframe title="myFrame" className="w-full h-full rounded" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=38.733158111572266%2C8.933744045863115%2C38.865680694580085%2C9.02174482491459&amp;layer=mapnik&amp;marker=8.977747104581484%2C38.79941940307617"></iframe>
                                 </div>
                             </div> 
                         )}
